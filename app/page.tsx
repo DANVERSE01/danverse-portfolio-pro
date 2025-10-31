@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 import Navigation from './components/Navigation';
+import ProjectsCarousel from './components/ProjectsCarousel';
+import TestimonialsSlider from './components/TestimonialsSlider';
 import { ArrowRight } from 'lucide-react';
 
 // Dynamic import for 3D components (client-side only)
@@ -112,26 +114,115 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Placeholder sections */}
-      <section id="about" className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center">
-          <h2 className="text-5xl font-black text-gray-900 mb-4">About Section</h2>
-          <p className="text-xl text-gray-600">Coming in next phase...</p>
+      {/* Services Section */}
+      <section id="services" className="py-32 px-6 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              What I <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Offer</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Comprehensive creative services powered by cutting-edge AI technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'AI-Powered Branding',
+                tagline: 'Distinct Identity Systems',
+                description: 'Develop comprehensive brand identities using AI-powered visual generation that scale across media.',
+                icon: '🎨',
+                gradient: 'from-cyan-500 to-blue-600',
+              },
+              {
+                title: 'Cinematic Ad Directing',
+                tagline: 'High-Impact Spots',
+                description: 'Direct and produce cinematic advertising content optimized for social media and out-of-home placements.',
+                icon: '🎬',
+                gradient: 'from-purple-500 to-pink-600',
+              },
+              {
+                title: '3D Web Design',
+                tagline: 'Immersive Experiences',
+                description: 'Build cutting-edge web experiences that combine 3D graphics, smooth animations, and responsive design.',
+                icon: '🌐',
+                gradient: 'from-blue-500 to-indigo-600',
+              },
+              {
+                title: 'Prompt Engineering',
+                tagline: 'Reusable AI Libraries',
+                description: 'Develop sophisticated prompt libraries and workflows that enable consistent, high-quality AI-generated content.',
+                icon: '⚡',
+                gradient: 'from-yellow-500 to-orange-600',
+              },
+              {
+                title: 'Monetization Systems',
+                tagline: 'Complete Revenue Ecosystems',
+                description: 'Design and implement complete monetization ecosystems for digital products optimized for the MENA market.',
+                icon: '💰',
+                gradient: 'from-green-500 to-emerald-600',
+              },
+              {
+                title: 'Creative Consulting',
+                tagline: 'Strategic Innovation',
+                description: 'Strategic guidance on leveraging AI tools and creative workflows to maximize output and impact.',
+                icon: '🚀',
+                gradient: 'from-red-500 to-rose-600',
+              },
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="group relative p-8 rounded-3xl bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 hover:border-transparent overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                <div className="text-5xl mb-4">{service.icon}</div>
+                <h3 className="text-2xl font-black text-gray-900 mb-2">{service.title}</h3>
+                <p className={`text-sm font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`}>
+                  {service.tagline}
+                </p>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="services" className="min-h-screen flex items-center justify-center px-6 bg-gray-50">
-        <div className="text-center">
-          <h2 className="text-5xl font-black text-gray-900 mb-4">Services Section</h2>
-          <p className="text-xl text-gray-600">Coming in next phase...</p>
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-32 px-6 bg-gradient-to-br from-gray-900 to-black">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
+              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Explore a selection of my recent work across branding, video, and web development
+            </p>
+          </div>
+
+          <ProjectsCarousel />
         </div>
       </section>
 
-      <section id="portfolio" className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center">
-          <h2 className="text-5xl font-black text-gray-900 mb-4">Portfolio Section</h2>
-          <p className="text-xl text-gray-600">Coming in next phase...</p>
+      {/* Testimonials Section */}
+      <section id="about" className="py-32 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
+              Client <span className="text-cyan-300">Testimonials</span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Hear what clients say about working with me
+            </p>
+          </div>
+
+          <TestimonialsSlider />
         </div>
+
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
       </section>
 
       <section id="contact" className="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-gray-900 to-black text-white">
