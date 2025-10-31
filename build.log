@@ -1,0 +1,87 @@
+
+> danverse-portfolio-pro@0.1.0 build /home/ubuntu/danverse-portfolio-pro
+> next build
+
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+ ⚠ Invalid next.config.ts options detected: 
+ ⚠     Unrecognized key(s) in object: 'swcMinify'
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 16.0.1 (Turbopack)
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+Error: Cannot apply unknown utility class `bg-white`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:21:1314)][0m
+    [2m[at Te (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:16:36337)][0m
+    [2m[at /home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:21:355][0m
+    [2m[at Tr (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:3:1718)][0m
+    [2m[at _ (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:3:1377)][0m
+    [2m[at Se (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at ln (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:105:5)][0m
+    [2m[at async sn (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/tailwindcss@4.1.16/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async Zr (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/@tailwindcss+node@4.1.16/node_modules/@tailwindcss/node/dist/index.js:10:3385)][0m
+
+> Build error occurred
+Error: Turbopack build failed with 4 errors:
+./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /home/ubuntu/danverse-portfolio-pro/app/globals.css:1:1: Cannot apply unknown utility class `bg-white`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    at Input.error (node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/node_modules__pnpm_56ec7204._.js:4132:22]
+    at Root.error (node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/node_modules__pnpm_56ec7204._.js:895:38]
+    [at Object.Once (/home/ubuntu/danverse-portfolio-pro/node_modules/.pnpm/@tailwindcss+postcss@4.1.16/node_modules/@tailwindcss/postcss/dist/index.js:10:6912)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:105:5)]
+    at async LazyResult.runAsync (node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/node_modules__pnpm_56ec7204._.js:6070:21]
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/[root-of-the-server]__51225daf._.js:146:36]
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/[root-of-the-server]__974941ed._.js:451:31]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+./app/page.tsx:8:17
+Ecmascript file had an error
+[0m [90m  6 |[39m
+ [90m  7 |[39m [90m// Dynamic import for 3D components (client-side only)[39m
+[31m[1m>[22m[39m[90m  8 |[39m [36mconst[39m [33mScene3D[39m [33m=[39m dynamic(() [33m=>[39m [36mimport[39m([32m'./components/Scene3D'[39m)[33m,[39m { ssr[33m:[39m [36mfalse[39m })[33m;[39m
+ [90m    |[39m                 [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  9 |[39m [36mconst[39m [33mGlassObject[39m [33m=[39m dynamic(() [33m=>[39m [36mimport[39m([32m'./components/GlassObject'[39m)[33m,[39m { ssr[33m:[39m [36mfalse[39m })[33m;[39m
+ [90m 10 |[39m
+ [90m 11 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mHome[39m() {[0m
+
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+
+
+./app/page.tsx:9:21
+Ecmascript file had an error
+[0m [90m  7 |[39m [90m// Dynamic import for 3D components (client-side only)[39m
+ [90m  8 |[39m [36mconst[39m [33mScene3D[39m [33m=[39m dynamic(() [33m=>[39m [36mimport[39m([32m'./components/Scene3D'[39m)[33m,[39m { ssr[33m:[39m [36mfalse[39m })[33m;[39m
+[31m[1m>[22m[39m[90m  9 |[39m [36mconst[39m [33mGlassObject[39m [33m=[39m dynamic(() [33m=>[39m [36mimport[39m([32m'./components/GlassObject'[39m)[33m,[39m { ssr[33m:[39m [36mfalse[39m })[33m;[39m
+ [90m    |[39m                     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 10 |[39m
+ [90m 11 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mHome[39m() {
+ [90m 12 |[39m   [36mreturn[39m ([0m
+
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+
+
+./app
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/[root-of-the-server]__51225daf._.js:146:36])
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [/home/ubuntu/danverse-portfolio-pro/.next/build/chunks/[root-of-the-server]__974941ed._.js:451:31])
+    at <unknown> (./app/page.tsx:8:17)
+    at <unknown> (./app/page.tsx:9:21)
+ ELIFECYCLE  Command failed with exit code 1.

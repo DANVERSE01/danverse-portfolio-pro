@@ -1,3 +1,5 @@
+'use client';
+
 import dynamic from 'next/dynamic';
 import Navigation from './components/Navigation';
 import ProjectsCarousel from './components/ProjectsCarousel';
